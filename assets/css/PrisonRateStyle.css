@@ -1,0 +1,131 @@
+:root {
+    --bs-danger-rgb: #fff;
+}
+
+body {
+    background-image: url("../images/background/background_brick.jpg");
+}
+
+
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 123, 0);
+    border-bottom: 4px solid black;
+}
+
+header, h1 {
+    text-align: center;
+    font-size: 5rem;
+    font-weight: bold;
+    color: white;
+    -webkit-text-stroke: 3px rgb(0, 0, 0);
+    text-shadow: 0px 0px 10px rgb(0, 0, 0);
+}
+
+.img-fluid {
+display: flex;
+justify-content: center;
+
+}
+.contenu {
+    background-color: #4a4c56;
+    border: solid rgb(255, 123, 0) 2px;
+    color: #fff;
+}
+
+h2 {
+    text-align: center;
+    color: #fff;
+    text-size-adjust: auto;
+    font-weight: bold;
+    }
+
+footer {
+    background-color: rgb(255, 123, 0);
+    text-align: center;
+    border-top: 4px solid black;
+}
+
+footer>h2 {
+    margin-bottom: 0;
+}
+
+.btn:hover {
+    background-color: rgb(255, 123, 0);
+    border: 3px solid black;
+}
+.border-orange {
+    border: 3px solid rgb(255, 123, 0);
+
+}
+
+.bouton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+/* ------------------------------ media queries ----------------------------- */
+
+
+
+@media screen and (max-width: 360px) {
+    header {
+        display: block;
+    }
+
+    header>h1 {
+        font-size: 50px;
+    }
+
+    .container {
+        display: block;
+    }
+
+    .btn {
+        margin-top: 5px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    header {
+        display: block;
+    }
+
+    header>h1 {
+        font-size: 50px;
+    }
+
+    .container {
+        display: block;
+    }
+
+    .btn {
+        margin-top: 5px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        display: block;
+    }
+
+    header>h1 {
+        font-size: 50px;
+    }
+
+    .container {
+        display: block;
+    }
+
+    .btn {
+        margin-top: 5px;
+    }
+}

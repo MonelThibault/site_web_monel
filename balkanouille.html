@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="fr" style="overflow-x:hidden">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/adopte1maton-balkanouille.css">
+    <link rel="stylesheet" href="./assets/css/money.css">
+    <link rel="stylesheet" href="./assets/css/animate.min.css">
+    <script>      const NUMBER_OF_LEAVES = 30; const width = window.screen.width; function init() { var container = document.getElementById('leafContainer'); for (var i = 0; i < NUMBER_OF_LEAVES; i++) { container.appendChild(createALeaf()); } } function randomInteger(low, high) { return low + Math.floor(Math.random() * (high - low)); } function randomFloat(low, high) { return low + Math.random() * (high - low); } function pixelValue(value) { return value + 'px'; } function durationValue(value) { return value + 's'; } function createALeaf() { var leafDiv = document.createElement('div'); var image = document.createElement('img'); image.src = './assets/images/animate/cash' + randomInteger(3, 7) + '.png'; leafDiv.style.top = "-100px"; leafDiv.style.left = pixelValue(randomInteger(0, width)); var spinAnimationName = (Math.random() < 0.5) ? 'clockwiseSpin' : 'counterclockwiseSpinAndFlip'; leafDiv.style.webkitAnimationName = 'fade, drop'; image.style.webkitAnimationName = spinAnimationName; var fadeAndDropDuration = durationValue(randomFloat(3, 9)); var spinDuration = durationValue(randomFloat(3, 7)); leafDiv.style.webkitAnimationDuration = fadeAndDropDuration + ', ' + fadeAndDropDuration; var leafDelay = durationValue(randomFloat(0, 0)); leafDiv.style.webkitAnimationDelay = leafDelay + ', ' + leafDelay; image.style.webkitAnimationDuration = spinDuration; leafDiv.appendChild(image); return leafDiv; } window.addEventListener('load', init, false);</script>
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/favicons/favicon.ico" />
+    <title>Balkanouille</title>
+</head>
+
+<body class="body-balkanouille">
+    <div class="moneybox" id="leafContainer"></div>
+    <header class="container-fluid">
+        <a href="index.html"><img src="./assets/images/logo/logo.svg" alt="logo"></a>
+        <h1>Prison Advisor</h1>
+    </header>
+
+    <main class="main-balkanouille">
+        <!-- NAV -->
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-3 my-4">
+                <div class="col">
+                    <a class="btn fs-3 fw-bold btn-lg btn-dark w-100 border-orange" href="./PrisonRate.html"
+                        role="button">
+                        PrisonRate</a>
+                </div>
+                <div class="col">
+                    <a class="btn fs-3 fw-bold btn-lg btn-dark w-100 border-orange" href="./balkanouille.html"
+                        role="button">
+                        Balkanouille</a>
+                </div>
+                <div class="col">
+                    <a class="btn fs-3 fw-bold btn-lg btn-dark w-100 border-orange" href="./adopt1maton.html"
+                        role="button">
+                        Adopt1Maton</a>
+                </div>
+            </div>
+        </div>
+        <!-- MAIN -->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-5 my-2 d-flex justify-content-center">
+                    <img src="./assets/images/balkanouille/balkanouille.jpg" class="rounded-circle border-orange"
+                        alt="photo de balkanouille" role="button">
+                </div>
+                <div class="col-sm-6 fs-5 bg-bluegrey text-center text-white border-orange rounded">
+                    <h2><u>Problèmes avec la justice ?</u></h2><br>
+                    <p>Faites appel à un véritable avocat diplômé de l’école de droit du Massachusetts de Perpignan. De
+                        la fraude à l’homicide volontaire, efficacité garantie à 100% ! 20 ans de réclusions criminelle
+                        réduit à une peine de 0 ans, c’est ça la qualité Patoche</p>
+                </div>
+            </div>
+
+            <div class="container ">
+                <div class="row">
+                    <div class="col-12 text-center bg-bluegrey text-white my-3 fs-4 rounded border-orange">
+                        <h2><u>Balkanouille, avocat d'exception</u></h2><br>
+                        <ul>
+                            <li> Professionnel de l’optimisation fiscale</li>
+                            <li> Peut changer les problèmes en solutions </li>
+                            <li> Retour de l’être aimé </li>
+                            <li> Blanchiment d’argent de tout types </li>
+                            <li> Roule les cigares sous les aisselles </li>
+                            <li> Possède le BAFA </li>
+                            <li> À son flocon (pour le ski) </li>
+                            <li> Savoir encyclopédique sur tout ce qui concerne la permaculture de près ou de loin </li>
+                            <li> Grand gagnant du concours de natation synchronisée inter-département Lozère-Cantal
+                            </li>
+                            <li> Sait parler aux écureuils </li>
+                            <li> Lit dans les pensées des gens de 40 ans et plus</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center mb-0rem bg-bluegrey text-white my-3 fs-5 rounded border-orange">
+                        <ul>
+                            <li>patoche-balkanouille@grospez.fr</li>
+                            <li>06.06.06.06.06</li>
+                            <li>666 chemin de la moulaga, Levalois-Perret 92300</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="container-fluid">
+        <p class="fs-4">Tous droits réservés - Prison Advisor - Mentions légales 2022</P>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+:root {
+    --bs-danger-rgb: rgb(113, 12, 180);
+}
+
+body {
+    background-image: url('../images/background/background_brick.jpg');
+}
+
+.card {
+    background-color: #4a4c56;
+}
+
+.bg-bluegrey {
+    background-color: #4a4c56;
+}
+
+.border-orange {
+   border: solid 3px rgb(255, 123, 0);
+}
+

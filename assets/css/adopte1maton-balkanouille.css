@@ -1,0 +1,117 @@
+
+/* CSS */
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    background-color: rgb(255, 123, 0);
+    border-bottom: 4px solid black;
+}
+header, h1 {
+    text-align: center;
+    font-size: 5rem;
+    font-weight: bold;
+    color: white;
+    -webkit-text-stroke:3px rgb(0, 0, 0);
+    text-shadow: 0px 0px 10px rgb(0, 0, 0);
+}
+
+footer{
+    background-color:rgb(255, 123, 0) ;
+    text-align: center;
+    border-top: 4px solid black;
+    position: relative;
+    bottom: 0;
+}
+footer >p {
+    margin-bottom: 0;
+}
+.btn:hover{ background-color:rgb(255, 123, 0) ;
+        border: 3px solid black;
+}
+.btn{
+    border:2px solid black
+}
+
+/* Adopt1Maton */
+.body-adopt1maton {
+    background-image: url(../images/background/double_background.jpg);
+}
+.main-adopt1maton * .card{
+    border: solid rgb(255, 123, 0) 2px;
+    border-radius: 5%;
+}
+.main-adopt1maton * .card-img-top{
+    border-radius: 5%;
+}
+
+/* Balkanouille */
+.body-balkanouille{
+    background-image: url(../images/background/double_background_billets.jpg);
+}
+.border-orange{
+    border: 3px solid rgb(255, 123, 0);
+}
+.bg-bluegrey {
+    background-color: #4a4c56;
+}
+/* Notre-equipe */
+.body-notre-equipe{
+    background-image: url(../images/background/background_brick.jpg);
+}
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 360px)
+    {
+        header {
+            display: block;
+        }
+        header > h1 {
+            font-size: 50px;
+        }
+        .container {
+            display: block;
+        }
+        .btn {
+            margin-top: 5px;
+        }
+}
+
+@media screen and (max-width: 576px)
+    {
+        header {
+            display: block;
+        }
+        header > h1 {
+            font-size: 50px;
+        }
+        .container {
+            display: block;
+        }
+        .btn {
+            margin-top: 5px;
+        }
+}
+
+@media screen and (max-width: 768px)
+    {
+        header {
+            display: block;
+        }
+        header > h1 {
+            font-size: 50px;
+        }
+        .container {
+            display: block;
+        }
+        .btn {
+            margin-top: 5px;
+        }
+}
+
