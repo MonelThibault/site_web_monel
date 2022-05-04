@@ -1,7 +1,3 @@
-
-//$product_name = "Jester Hat";
-//$price = "66$";
-//$product_pic = "https://emojis.slackmojis.com/emojis/images/1643516618/26601/jester-hat.png?1643516618";
 <html>
 <title> Vente de truc et bidules</title>
 <body>
@@ -10,10 +6,6 @@
 
 include 'multidimensional-catalog.php';
 include 'my-functions.php';
-
-
-
-
 
 
 
