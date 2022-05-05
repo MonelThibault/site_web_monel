@@ -3,7 +3,6 @@
 <body>
 
 <?php
-
 include 'my-functions.php';
 include 'multidimensional-catalog.php';
 

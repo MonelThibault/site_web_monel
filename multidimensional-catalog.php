@@ -1,6 +1,5 @@
 
 <?php
-include 'my-functions.php';
 
 $products = [
         "menottes" => [
@@ -29,8 +28,8 @@ $products = [
 foreach($products as $product) {
     echo "<div style = 'text-align: center' >";
     echo "<h2>" . $product["name"] . "</h2>";
-    echo "<h3>" . formatPrice($product["price"]) . " HT</h3>";
-//    echo "<h3>" . priceExcludingVAT($products[$product]["price"]) . " TTC</h3>";
+    echo "<h3>" . formatPrice($product["price"]) . "TTC</h3>";
+    echo "<h3>" . priceExcludingVAT($product["price"]) . " HT</h3>";
 //    echo "<h3>" . discountedPrice($products[$product]["price"], $products[$product]["discount"]) . " reduct TTC</h3>";
     echo "<h3>" . $product["weight"] . " </h3>";
     echo "<img src =' " . $product["picture_url"] . "' alt=product picture' " . "'>";
