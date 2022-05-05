@@ -4,8 +4,9 @@
 
 <?php
 
-include 'multidimensional-catalog.php';
 include 'my-functions.php';
+include 'multidimensional-catalog.php';
+
 
 
 

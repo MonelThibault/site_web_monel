@@ -1,5 +1,7 @@
 <?php
 
 function formatPrice($price){
-// echo $price . "€"       -------------> yas une fonction pré-faite pour formatter.
+    $price = $price/100;
+    $formatted_price = number_format($price,2, ',', ' ');
+return $formatted_price . "€";
 }
