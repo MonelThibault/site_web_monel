@@ -35,4 +35,18 @@ foreach($products as $product) {
     echo "<img src =' " . $product["picture_url"] . "' alt=product picture' " . "'>";
     echo "</div>";
 }
+
 ?>
+<html>
+<body>
+
+<div style = 'text-align: center' >
+    <form method="get">
+      Sélection du produit: <input type="list" name="get_name">
+        <input type="submit" value="Submit GET">
+    </form>
+
+</div>
+
+</body>
+</html>
