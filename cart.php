@@ -24,7 +24,7 @@ global $products;
             <th colspan="6">Récapitulatif de votre commande</th>
         </td>
         </thead>
-        <tbody>
+        <select>
         <tr>
             <td> <?php echo $products[$_POST["product"]]["name"]; ?></td>
             <td> <?php echo "Quantité :" . $_POST["quantity"]; ?></td>
@@ -39,12 +39,19 @@ global $products;
         </tr>
         <tr>
             <td> Remise: <?php echo discount($products[$_POST["product"]]["price"],$products[$_POST["product"]]["discount"]) * intval($_POST["quantity"]) . "€"; ?></td>
-            <td> Prix unitaire: <?php echo formatPrice($products[$_POST["product"]]["price"]) . "€"; ?></td>
+            <td> Prix unitaire(TTC): <?php echo formatPrice($products[$_POST["product"]]["price"]) . "€"; ?></td>
             <td> Total HT:  <?php echo priceExcludingVAT($products[$_POST["product"]]["price"]) * intval($_POST["quantity"]) . "€"; ?></td>
             <td> TVA: <?php echo valueVAT($products[$_POST["product"]]["price"]) * intval($_POST["quantity"]) . "€"; ?> </td>
         </tr>
+        <label for="ship-select">Choisissez un moyen de livraison:</label>
+        <select name="shipment" id="ship-select"
+            <option value="la-poste">La Poste</option>
+            <option value="DHL">DHL</option>
+            <option value="UPS">UPS</option>
+        </select>
         </tbody>
     </table>
+
 </div>
 
 </body>
