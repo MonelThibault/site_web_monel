@@ -24,38 +24,3 @@ $products = [
                 "picture_url" => "https://art.hearthstonejson.com/v1/256x/BAR_322.jpg",
         ],
 ];
-
-foreach($products as $product) {
-    echo "<div style = 'text-align: center' >";
-    echo "<h2>" . $product["name"] . "</h2>";
-    echo "<h3>" . formatPrice($product["price"]) . "TTC</h3>";
-    echo "<h3>" . priceExcludingVAT($product["price"]) . " HT</h3>";
-    echo "<h3>" . discountedPrice($product["price"], $product["discount"]) . " de réduction</h3>";
-    echo "<h3>" . $product["weight"] . " </h3>";
-    echo "<img src =' " . $product["picture_url"] . "' alt=product picture' " . "'>";
-    echo "</div>";
-}
-
-?>
-<html lang="en">
-<body>
-<br><br>
-
-<div style = 'text-align: center' >
-    <form method="get">
-        <label for="product-selection">Sélection du produit:</label>
-        <select name="products" id="product-selection">
-            <option value="">--Choisissez un produit--</option>
-            <option value="menottes">Menottes</option>
-            <option value="matraque">Matraque</option>
-            <option value="surin">surin</option>
-        </select>
-        <br>
-        <label for="product-quantity"> Quantité: </label>
-        <input id="product-quantity" type="number" min="0" value="1">
-        <input type="submit" value="Commander">
-    </form>
-</div>
-
-</body>
-</html>
