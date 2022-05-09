@@ -37,15 +37,24 @@ foreach($products as $product) {
 }
 
 ?>
-<html>
+<html lang="en">
 <body>
+<br><br>
 
 <div style = 'text-align: center' >
     <form method="get">
-      Sélection du produit: <input type="list" name="get_name">
-        <input type="submit" value="Submit GET">
+        <label for="product-selection">Sélection du produit:</label>
+        <select name="products" id="product-selection">
+            <option value="">--Choisissez un produit--</option>
+            <option value="menottes">Menottes</option>
+            <option value="matraque">Matraque</option>
+            <option value="surin">surin</option>
+        </select>
+        <br>
+        <label for="product-quantity"> Quantité: </label>
+        <input id="product-quantity" type="number" min="0" value="1">
+        <input type="submit" value="Commander">
     </form>
-
 </div>
 
 </body>
