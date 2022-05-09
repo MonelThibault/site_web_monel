@@ -1,6 +1,6 @@
 <html lang="en">
-<title> Vente de truc et bidules</title>
 <head>
+    <title> Vente de truc et bidules </title>
     <meta charset="UTF-8">
 </head>
 <body>
@@ -8,21 +8,22 @@
 <?php
 include 'my-functions.php';
 include 'multidimensional-catalog.php';
+global $products;
 ?>
 
-<?php foreach($products as $product) { ?>
+<?php foreach($products as $product => $product_info) { ?>
     <div style = 'text-align: center' >
-    <?= "<h2>" . $product["name"] . "</h2>"; ?>
-    <?= "<h3>" . formatPrice($product["price"]) . "TTC</h3>"; ?>
-    <?= "<h3>" . priceExcludingVAT($product["price"]) . " HT</h3>"; ?>
-    <?= "<h3>" . discountedPrice($product["price"], $product["discount"]) . " de réduction</h3>"; ?>
-    <?= "<h3>" . $product["weight"] . " </h3>"; ?>
-    <?= "<img src =' " . $product["picture_url"] . "' alt=product picture' " . "'>" ?>
+    <?= "<h2>" . $product_info["name"] . "</h2>"; ?>
+    <?= "<h3>" . formatPrice($product_info["price"]) . "€" . "TTC</h3>"; ?>
+    <?= "<h3>" . priceExcludingVAT($product_info["price"]) . "€" . " HT</h3>"; ?>
+    <?= "<h3>" . discount($product_info["price"], $product_info["discount"]) . "€" . " de réduction</h3>"; ?>
+    <?= "<h3>" . $product_info["weight"] . " </h3>"; ?>
+    <?= "<img src =' " . $product_info["picture_url"] . "' alt=product picture' " . "'>" ?>
         <form method="post" action="cart.php">
             <label for="quantity"> Quantité: </label>
-            <input id="quantity" name="quantity" type="number" min="0" value="1">
-            <input id="product" name="product" type="hidden" value="<?php echo $product["name"] ?>">
-                <input type="submit" name="submit" value="Commander">
+            <input id="quantity" name="quantity" type="number" min="1" value="1">
+            <input id="product" name="product" type="hidden" value="<?php echo $product ?>">
+            <input type="submit" name="submit" value="Commander">
         </form>
     </div>
 <?php } ?>
