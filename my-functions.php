@@ -38,6 +38,23 @@ function formatPrice($price_to_format): float
 
 function shippingCost($weight_to_evaluate, $total_price,$shipment): float
 {
+
+//    switch ($shipment){
+//        case "la poste":
+//            $price=5;
+//        break;
+//        case "la poste":
+//            $price=5;
+//            break;
+//        case "la poste":
+//            $price=5;
+//            break;
+//        default:
+//            $price=5;
+//            break;
+//
+//    }
+//
     if ($weight_to_evaluate <= 500) {
         $FDP = 5;
     } elseif ($weight_to_evaluate <= 2000) {

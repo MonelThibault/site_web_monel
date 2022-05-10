@@ -70,7 +70,7 @@ var_dump($shipment);
     <p>>2kg : frais de port gratuits</p>
 
     <?php
-    echo "Frais de port : " . $FDP = (shippingCost(($products[$key_product]["weight"]) * $quantity, $discounted_price,$shipment) * $quantity);
+    echo "Frais de port : " . $FDP = shippingCost(($products[$key_product]["weight"]) * $quantity, $discounted_price,$shipment);
     echo "<h4>" . "Prix final :" . $FDP + $discounted_price * $quantity . "</h4>";
     ?>
 
