@@ -6,12 +6,12 @@
 <body>
 
 <?php
-include 'my-functions.php';
 include 'multidimensional-catalog.php';
+include 'my-functions.php';
 global $products;
 ?>
 
-<?php foreach($products as $product => $product_info) { ?>
+<?php foreach($products as $key_product => $product_info) { ?>
     <div style = 'text-align: center' >
     <?= "<h2>" . $product_info["name"] . "</h2>"; ?>
     <?= "<h3>" . formatPrice($product_info["price"]) . "€" . "TTC</h3>"; ?>
@@ -22,32 +22,11 @@ global $products;
         <form method="post" action="cart.php">
             <label for="quantity"> Quantité: </label>
             <input id="quantity" name="quantity" type="number" min="1" value="1">
-            <input id="product" name="product" type="hidden" value="<?php echo $product ?>">
+            <input id="product" name="product" type="hidden" value="<?php echo $key_product ?>">
             <input type="submit" name="submit" value="Commander">
         </form>
     </div>
 <?php } ?>
-
-
-<!--<html lang="en">-->
-<!--<body>-->
-<!--<br><br>-->
-<!---->
-<!--<div style = 'text-align: center' >-->
-<!--    <form method="post" action="cart.php">-->
-<!--        <label for="product-selection">Sélection du produit:</label>-->
-<!--        <select name="product" id="product-selection">-->
-<!--            <option value="">--Choisissez un produit--</option>-->
-<!--            <option value="menottes">Menottes</option>-->
-<!--            <option value="matraque">Matraque</option>-->
-<!--            <option value="surin">surin</option>-->
-<!--        </select>-->
-<!--        <br>-->
-<!--        <label for="quantity"> Quantité: </label>-->
-<!--        <input id="quantity" type="number" min="0" value="1">-->
-<!--        <input type="submit" value="Commander">-->
-<!--    </form>-->
-<!--</div>-->
 
 </body>
 </html>
