@@ -14,10 +14,10 @@ global $products;
 $key_product = $_POST["product"];
 $discounted_price = discounted_price($products[$key_product]["price"], $products[$key_product]["discount"]);
 $quantity = intval($_POST["quantity"]);
-$shipment=(isset($_POST["shipment"])?$_POST["shipment"]:"la_poste");
+$shipment = (isset($_POST["shipment"]) ? $_POST["shipment"] : "la_poste");
 //var_dump($products);
-var_dump($_POST);
-var_dump($shipment);
+//var_dump($_POST);
+//var_dump($shipment);
 ?>
 
 <div style='text-align: center'>
@@ -56,9 +56,9 @@ var_dump($shipment);
     <form method="post" action="">
         <label for="shipment">Choisissez un moyen de livraison:</label>
         <select name="shipment" id="shipment">
-            <option value="la_poste" <?php echo ($shipment=="la_poste"?"selected":"") ?> >La Poste</option>
-            <option value="DHL" <?php echo ($shipment=="DHL"?"selected":"") ?>>DHL</option>
-            <option value="UPS" <?php echo ($shipment=="UPS"?"selected":"") ?>>UPS</option>
+            <option value="la_poste" <?php echo($shipment == "la_poste" ? "selected" : "") ?> >La Poste</option>
+            <option value="DHL" <?php echo($shipment == "DHL" ? "selected" : "") ?>>DHL</option>
+            <option value="UPS" <?php echo($shipment == "UPS" ? "selected" : "") ?>>UPS</option>
         </select>
         <input id="quantity" name="quantity" type="hidden" value="<?php echo $quantity ?>">
         <input id="product" name="product" type="hidden" value="<?php echo $key_product ?>">
@@ -70,10 +70,9 @@ var_dump($shipment);
     <p>>2kg : frais de port gratuits</p>
 
     <?php
-    echo "Frais de port : " . $FDP = shippingCost(($products[$key_product]["weight"]) * $quantity, $discounted_price,$shipment);
+    echo "Frais de port : " . $FDP = shippingCost(($products[$key_product]["weight"]) * $quantity, $discounted_price, $shipment);
     echo "<h4>" . "Prix final :" . $FDP + $discounted_price * $quantity . "</h4>";
     ?>
-
 </div>
 
 </body>

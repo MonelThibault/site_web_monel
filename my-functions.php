@@ -36,31 +36,34 @@ function formatPrice($price_to_format): float
     return floatval($formatted_price);
 }
 
-function shippingCost($weight_to_evaluate, $total_price,$shipment): float
+function shippingCost($weight_to_evaluate, $total_price, $shipment): float
 {
-
-//    switch ($shipment){
-//        case "la poste":
-//            $price=5;
-//        break;
-//        case "la poste":
-//            $price=5;
-//            break;
-//        case "la poste":
-//            $price=5;
-//            break;
-//        default:
-//            $price=5;
-//            break;
-//
-//    }
-//
-    if ($weight_to_evaluate <= 500) {
-        $FDP = 5;
-    } elseif ($weight_to_evaluate <= 2000) {
-        $FDP = (10 * $total_price / 100);
-    } else {
-        $FDP = 0;
+    if ($shipment === "la_poste") {
+        if ($weight_to_evaluate <= 500) {
+            $FDP = 5;
+        } elseif ($weight_to_evaluate <= 2000) {
+            $FDP = (10 * $total_price / 100);
+        } else {
+            $FDP = 0;
+        }
+    }
+    if ($shipment === "DHL") {
+        if ($weight_to_evaluate <= 500) {
+            $FDP = 6;
+        } elseif ($weight_to_evaluate <= 2000) {
+            $FDP = (5 * $total_price / 100);
+        } else {
+            $FDP = 0;
+        }
+    }
+    if ($shipment === "UPS") {
+        if ($weight_to_evaluate <= 500) {
+            $FDP = 4;
+        } elseif ($weight_to_evaluate <= 2000) {
+            $FDP = (3 * $total_price / 100);
+        } else {
+            $FDP = 1;
+        }
     }
     $FDP = number_format($FDP, 2, '.', ' ');
     return floatval($FDP);
