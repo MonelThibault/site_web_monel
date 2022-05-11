@@ -1,3 +1,16 @@
+<?php session_start();
+
+include 'multidimensional-catalog.php';
+include 'my-functions.php';
+global $products;
+
+if (isset($_POST["product"])) {
+    $_SESSION = ["panier" => $_POST];
+} elseif (isset($_SESSION["panier"])) {
+    $_POST = $_SESSION["panier"];
+} ?>
+
+
 <html lang="en">
 <head>
     <title> Panier</title>
@@ -8,9 +21,6 @@
 <br>
 
 <?php
-include 'multidimensional-catalog.php';
-include 'my-functions.php';
-global $products;
 $key_product = $_POST["product"];
 $discounted_price = discounted_price($products[$key_product]["price"], $products[$key_product]["discount"]);
 $quantity = intval($_POST["quantity"]);
