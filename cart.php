@@ -1,15 +1,15 @@
 <?php session_start();
 
-include 'multidimensional-catalog.php';
 include 'my-functions.php';
+include 'database.php';
 global $products;
+$products = selectAll('SELECT * FROM products');
 
 if (isset($_POST["product"])) {
     $_SESSION = ["panier" => $_POST];
 } elseif (isset($_SESSION["panier"])) {
     $_POST = $_SESSION["panier"];
 } ?>
-
 
 <html lang="en">
 <head>

@@ -6,9 +6,11 @@
 <body>
 
 <?php
-include 'multidimensional-catalog.php';
+//include 'multidimensional-catalog.php';
 include 'my-functions.php';
+include 'database.php';
 global $products;
+$products = selectAll('SELECT * FROM products');
 ?>
 
 <?php foreach($products as $key_product => $product_info) { ?>
@@ -17,7 +19,7 @@ global $products;
     <?= "<h3>" . formatPrice($product_info["price"]) . "€" . "TTC</h3>"; ?>
     <?= "<h3>" . priceExcludingVAT($product_info["price"]) . "€" . " HT</h3>"; ?>
     <?= "<h3>" . discount($product_info["price"], $product_info["discount"]) . "€" . " de réduction</h3>"; ?>
-    <?= "<h3>" . $product_info["weight"] . " </h3>"; ?>
+    <?= "<h3>" . $product_info["weight"] . "g" . " </h3>"; ?>
     <?= "<img src =' " . $product_info["picture_url"] . "' alt=product picture' " . "'>" ?>
         <form method="post" action="cart.php">
             <label for="quantity"> Quantité: </label>
