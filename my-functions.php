@@ -68,3 +68,15 @@ function shippingCost($weight_to_evaluate, $total_price, $shipment): float
     $FDP = number_format($FDP, 2, '.', ' ');
     return floatval($FDP);
 }
+
+function createOrderNumber($article, $quantity): string
+{
+    $permitted_chars = '0123456789abcdefghijklmnopqrstuvwxyz';
+    return substr($article, 0, 3) . $quantity . substr(str_shuffle($permitted_chars), 0, 6);
+}
+
+function insertOrderToDatabase($totalPrice, $product, $quantity, $shipment): void
+{
+    $order_number = createOrderNumber($product, $quantity);
+    prepareAndExecuteOne("INSERT INTO orders(order_number,product,quantity,shipment,total_price) VALUES ('$order_number','$product','$quantity','$shipment','$totalPrice')");
+}

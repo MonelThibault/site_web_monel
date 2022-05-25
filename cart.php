@@ -74,15 +74,15 @@ $shipment = (isset($_POST["shipment"]) ? $_POST["shipment"] : "la_poste");
         <input id="product" name="product" type="hidden" value="<?php echo $key_product ?>">
         <input type="submit" name="submit" value="valider">
     </form>
-    <h4>Frais de port:</h4>
-    <p>0 à 500g : 5 euros de frais de port</p>
-    <p>500g à 2kg : 10% du montant total de frais de port</p>
-    <p>>2kg : frais de port gratuits</p>
-
     <?php
     echo "Frais de port : " . $FDP = shippingCost(($products[$key_product]["weight"]) * $quantity, $discounted_price, $shipment);
-    echo "<h4>" . "Prix final :" . $FDP + $discounted_price * $quantity . "</h4>";
+    $finalPrice = $FDP + $discounted_price * $quantity;
+    echo "<h4>" . "Prix final :" . $finalPrice . "</h4>";
     ?>
+    <form method="post" action="bravo.php">
+        <input id="final_price" name="final_price" type="hidden" value="<?php echo $finalPrice ?>">
+        <input type="submit" name="submit" value="Commander">
+    </form>
 </div>
 
 </body>
