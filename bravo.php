@@ -6,9 +6,9 @@ include 'database.php';
 //var_dump($_SESSION['panier']);
 //var_dump($_POST);
 $order = insertOrderToDatabase($_POST['final_price'],
-    $_SESSION['panier']['product'],
+    $_POST['product_name'],
     $_SESSION['panier']['quantity'],
-    $_SESSION['panier']['shipment']);
+);
 ?>
 
 <html lang="en">

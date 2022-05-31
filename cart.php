@@ -4,7 +4,6 @@ include 'my-functions.php';
 include 'database.php';
 global $products;
 $products = selectAll('SELECT * FROM products');
-
 if (isset($_POST["product"])) {
     $_SESSION = ["panier" => $_POST];
 } elseif (isset($_SESSION["panier"])) {
@@ -25,6 +24,8 @@ $key_product = $_POST["product"];
 $discounted_price = discounted_price($products[$key_product]["price"], $products[$key_product]["discount"]);
 $quantity = intval($_POST["quantity"]);
 $shipment = (isset($_POST["shipment"]) ? $_POST["shipment"] : "la_poste");
+$product_name = ($products[$key_product]["name"]);
+//var_dump($_SESSION);
 //var_dump($products);
 //var_dump($_POST);
 //var_dump($shipment);
@@ -65,7 +66,8 @@ $shipment = (isset($_POST["shipment"]) ? $_POST["shipment"] : "la_poste");
 <div style="text-align: center">
     <form method="post" action="">
         <label for="shipment">Choisissez un moyen de livraison:</label>
-        <select name="shipment" id="shipment">
+        <select name="shipment" id="shipment" required>
+            <option value="">Choisissez un option</option>
             <option value="la_poste" <?php echo($shipment == "la_poste" ? "selected" : "") ?> >La Poste</option>
             <option value="DHL" <?php echo($shipment == "DHL" ? "selected" : "") ?>>DHL</option>
             <option value="UPS" <?php echo($shipment == "UPS" ? "selected" : "") ?>>UPS</option>
@@ -81,6 +83,7 @@ $shipment = (isset($_POST["shipment"]) ? $_POST["shipment"] : "la_poste");
     ?>
     <form method="post" action="bravo.php">
         <input id="final_price" name="final_price" type="hidden" value="<?php echo $finalPrice ?>">
+        <input id="product_name" name="product_name" type="hidden" value="<?php echo $product_name ?>">
         <input type="submit" name="submit" value="Commander">
     </form>
 </div>

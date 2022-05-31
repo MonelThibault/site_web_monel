@@ -20,7 +20,7 @@ $products = selectAll('SELECT * FROM products');
     <?= "<h3>" . priceExcludingVAT($product_info["price"]) . "€" . " HT</h3>"; ?>
     <?= "<h3>" . discount($product_info["price"], $product_info["discount"]) . "€" . " de réduction</h3>"; ?>
     <?= "<h3>" . $product_info["weight"] . "g" . " </h3>"; ?>
-    <?= "<img src =' " . $product_info["picture_url"] . "' alt=product picture' " . "'>" ?>
+    <?= "<img src =' " . $product_info["picture"] . "' alt=product picture' " . "'>" ?>
         <form method="post" action="cart.php">
             <label for="quantity"> Quantité: </label>
             <input id="quantity" name="quantity" type="number" min="1" value="1">

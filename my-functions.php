@@ -75,8 +75,14 @@ function createOrderNumber($article, $quantity): string
     return substr($article, 0, 3) . $quantity . substr(str_shuffle($permitted_chars), 0, 6);
 }
 
-function insertOrderToDatabase($totalPrice, $product, $quantity, $shipment): void
+function insertOrderToDatabase($totalPrice, $product, $quantity,): void
 {
     $order_number = createOrderNumber($product, $quantity);
-    prepareAndExecuteOne("INSERT INTO orders(order_number,product,quantity,shipment,total_price) VALUES ('$order_number','$product','$quantity','$shipment','$totalPrice')");
+    $productId  = getProductId($product);
+
+    insertNewOrder ( $order_number, $totalPrice);
+    $order_id = getOrderId($order_number);
+
+    prepareAndExecuteOne("INSERT INTO order_product( order_id, quantity, product_id) VALUES( {$order_id} , {$quantity}, {$productId} )");
+//    prepareAndExecuteOne("UPDATE FROM products SET quantity = quantity - '$quantity' WHERE name = '$product';");
 }
