@@ -66,7 +66,7 @@ function getOrderId( string $orderNumber ): int {
         "orderNumber" => $orderNumber,
         ]);
 
-    return $paramStatement->fetch()["id"];
+    return $paramStatement->fetch(PDO::FETCH_ASSOC)["id"];
 }
 
 
