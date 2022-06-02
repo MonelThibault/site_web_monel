@@ -13,5 +13,4 @@ $catalog = new Catalog();
 displayCatalog($catalog);
 ?>
 
-
 </body>
